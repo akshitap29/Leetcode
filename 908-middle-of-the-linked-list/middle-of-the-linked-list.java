@@ -15,25 +15,15 @@ class Solution {
         {
             return head;
         }
-        ListNode temp=head;
-        int count=0;
-        while(temp!=null)
+        ListNode slow=head;
+        ListNode fast=head;
+        while(fast!=null && fast.next!=null)
         {
-            count++;
-            temp=temp.next;
+            slow=slow.next;
+            fast=fast.next.next;
         }
-        int midNode=(count/2)+1;
-        temp=head;
-        while(temp!=null)
-        {
-            midNode=midNode-1;
-            if(midNode==0)
-            {
-                break;
-            }
-            temp=temp.next;
-        }
-        return temp;
+        return slow;
+
         
     }
 }
