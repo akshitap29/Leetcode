@@ -30,11 +30,11 @@ class Solution {
         {
             return head.next;
         }
-        int count=0;
+        cnt=0;
         while(temp!=null)
         {
-            count++;
-            if(count==el)
+            cnt++;
+            if(cnt==el)
             {
                 break;
             }
