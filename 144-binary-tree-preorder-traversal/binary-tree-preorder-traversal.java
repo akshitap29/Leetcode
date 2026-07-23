@@ -23,7 +23,7 @@ class Solution {
         {
             return preorder;
         }
-        st.add(root);
+        st.push(root);
         while(!st.isEmpty())
         {
             root=st.pop();
