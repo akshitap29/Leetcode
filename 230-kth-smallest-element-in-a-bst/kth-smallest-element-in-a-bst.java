@@ -16,35 +16,30 @@
 class Solution {
     public int kthSmallest(TreeNode root, int k) 
     {
-       return inorder(root,k);
-        
-
-        
-    }
-    public int inorder(TreeNode root,int k)
-    {
         Stack<TreeNode> st=new Stack<>();
-        
-        List<Integer> arr=new ArrayList<>();
+        if(root==null)
+            return -1;
         TreeNode curr=root;
-        
         while(curr!=null || !st.isEmpty())
         {
             while(curr!=null)
             {
                 st.push(curr);
                 curr=curr.left;
-
             }
-            
-            
-                
-                curr=st.pop();
-                arr.add(curr.val);
-                curr=curr.right;
-            
+            curr=st.pop();
+            k--;
+            if(k==0)
+            {
+                return curr.val;
+            }
+            curr=curr.right;
         }
-        return arr.get(k-1);
+        return -1;
+    
+        
+
         
     }
+    
 }
