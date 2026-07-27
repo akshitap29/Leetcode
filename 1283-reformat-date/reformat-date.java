@@ -23,12 +23,9 @@ class Solution {
         String temp=parts[0].substring(0,parts[0].length()-2);
         if(temp.length()==1)
         {
-            sb.append("0"+temp);
+            temp="0"+temp;
         }
-        else
-        {
-            sb.append(temp);
-        }
+        sb.append(temp);
         return sb.toString();
 
 
