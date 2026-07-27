@@ -3,7 +3,7 @@ class Solution {
     {
         HashMap<String,String> map=new HashMap<>();
         String[] parts=date.split(" ");
-        String parts1="";
+        StringBuilder sb=new StringBuilder();
         map.put("Jan","01");
         map.put("Feb","02");
         map.put("Mar","03");
@@ -16,17 +16,21 @@ class Solution {
         map.put("Oct","10");
         map.put("Nov","11");
         map.put("Dec","12");
-        if(parts[0].length()==3)
+        sb.append(parts[2]);
+        sb.append("-");
+        sb.append(map.get(parts[1]));
+        sb.append("-");
+        String temp=parts[0].substring(0,parts[0].length()-2);
+        if(temp.length()==1)
         {
-            parts1="0"+parts[0].substring(0,parts[0].length()-2);
+            sb.append("0"+temp);
         }
         else
         {
-            parts1=parts[0].substring(0,parts[0].length()-2);
+            sb.append(temp);
         }
-        String ans;
-        ans=parts[2]+"-"+map.get(parts[1])+"-"+parts1;
-        return ans;
+        return sb.toString();
+
 
         
 
