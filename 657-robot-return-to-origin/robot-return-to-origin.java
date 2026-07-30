@@ -3,9 +3,9 @@ class Solution {
     {
         int count1=0;
         int count2=0;
-        for(int i=0;i<moves.length();i++)
+        for(char ch:moves.toCharArray())
         {
-            char ch=moves.charAt(i);
+            
             switch(ch)
             {
                 case 'L':
