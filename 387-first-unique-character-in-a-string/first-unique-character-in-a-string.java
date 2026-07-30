@@ -1,24 +1,19 @@
 class Solution {
     public int firstUniqChar(String s) 
     {
-        int index=0;
+        HashMap<Character,Integer> map=new HashMap<>();
         for(int i=0;i<s.length();i++)
         {
-            boolean unique=true;
-            for(int j=0;j<s.length();j++)
+            char ch=s.charAt(i);
+            map.put(ch,map.getOrDefault(ch,0)+1);
+        }
+        for(int i=0;i<s.length();i++)
+        {
+            if(map.get(s.charAt(i))==1)
             {
-                if(i!=j && s.charAt(i)==s.charAt(j))
-                {
-                    unique=false;
-                    break;
-                }
-            }
-            if(unique)
-            {
-                index=i;
+                int index=i;
                 return index;
             }
-            
         }
         return -1;
     }
