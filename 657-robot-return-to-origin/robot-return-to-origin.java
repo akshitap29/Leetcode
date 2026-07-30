@@ -5,15 +5,16 @@ class Solution {
         int count2=0;
         for(int i=0;i<moves.length();i++)
         {
-            if(moves.charAt(i)=='L')
+            char ch=moves.charAt(i);
+            if(ch=='L')
             {
                 count1++;
             }
-            else if(moves.charAt(i)=='R')
+            else if(ch=='R')
             {
                 count1--;
             }
-            else if(moves.charAt(i)=='U')
+            else if(ch=='U')
             {
                 count2++;
             }
