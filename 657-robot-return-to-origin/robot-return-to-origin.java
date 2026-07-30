@@ -9,15 +9,15 @@ class Solution {
             {
                 count1++;
             }
-            if(moves.charAt(i)=='R')
+            else if(moves.charAt(i)=='R')
             {
                 count1--;
             }
-            if(moves.charAt(i)=='U')
+            else if(moves.charAt(i)=='U')
             {
                 count2++;
             }
-            if(moves.charAt(i)=='D')
+            else 
             {
                 count2--;
             }
