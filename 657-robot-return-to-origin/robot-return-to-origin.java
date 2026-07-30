@@ -13,9 +13,6 @@ class Solution {
             {
                 count1--;
             }
-        }
-        for(int i=0;i<moves.length();i++)
-        {
             if(moves.charAt(i)=='U')
             {
                 count2++;
@@ -25,6 +22,7 @@ class Solution {
                 count2--;
             }
         }
+       
         if(count1==0 && count2==0)
         {
             return true;
