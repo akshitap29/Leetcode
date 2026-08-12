@@ -25,10 +25,6 @@ class Solution {
                     found=true;
                     break;
                 }
-                
-                
-                    
-                
             }
             if(!found)
             {
@@ -36,7 +32,6 @@ class Solution {
             }
             ans++;
         }
-        
         
     }
 }
