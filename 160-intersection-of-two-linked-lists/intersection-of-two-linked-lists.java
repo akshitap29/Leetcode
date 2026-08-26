@@ -14,22 +14,26 @@ public class Solution {
     {
         ListNode curr1=headA;
         ListNode curr2=headB;
-        while(curr1!=null)
+        while(curr1!=curr2)
         {
-            while(curr2!=null)
+            if(curr1==null)
             {
-                if(curr2!=curr1)
-                {
-                    curr2=curr2.next;
-                }
-                else
-                {
-                    return curr2;
-                }
+                curr1=headB;
             }
-            curr2=headB;
-            curr1=curr1.next;
+            else
+            {
+                curr1=curr1.next;
+            }
+            if(curr2==null)
+            {
+                curr2=headA;
+            }
+            else
+            {
+                curr2=curr2.next;
+            }
         }
-        return null;
+        return curr1;
+       
     }
 }
