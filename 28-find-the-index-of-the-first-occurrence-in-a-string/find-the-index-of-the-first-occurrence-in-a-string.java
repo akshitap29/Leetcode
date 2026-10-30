@@ -1,21 +1,21 @@
 class Solution {
     public int strStr(String haystack, String needle) 
     {
-        int n=haystack.length();
-        int m=needle.length();
-        for(int i=0;i<=n-m;i++)
+        for(int i=0;i<=haystack.length()-needle.length();i++)
         {
-            int j=0;
-            while(j<m && haystack.charAt(i+j)==needle.charAt(j))
+            int j;
+            for(j=0;j<needle.length();j++)
             {
-                j++;
+                if(haystack.charAt(i+j)!=needle.charAt(j))
+                {
+                    break;
+                }
             }
-            if(j==m)
+            if(j==needle.length())
             {
                 return i;
             }
         }
-         return -1;
-        
+        return -1; 
     }
 }
