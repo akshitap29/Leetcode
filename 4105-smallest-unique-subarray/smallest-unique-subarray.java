@@ -1,5 +1,5 @@
 
-import java.util.*;
+
 
 class Solution {
 
@@ -22,7 +22,7 @@ class Solution {
         power1[0] = 1;
         power2[0] = 1;
 
-        // Build prefix hashes and powers
+        
         for (int i = 0; i < n; i++) {
 
             power1[i + 1] = (power1[i] * BASE1) % MOD1;
@@ -65,7 +65,7 @@ class Solution {
 
         int n = nums.length;
 
-        // Generate hashes of all windows of length k
+       
         for (int i = 0; i + k <= n; i++) {
 
             long h1 = (hash1[i + k]
@@ -76,13 +76,13 @@ class Solution {
                     - hash2[i] * power2[k] % MOD2
                     + MOD2) % MOD2;
 
-            // Combine both hashes into one key
+          
             long key = h1 * MOD2 + h2;
 
             map.put(key, map.getOrDefault(key, 0) + 1);
         }
 
-        // Check whether any window occurs exactly once
+        
         for (int count : map.values()) {
 
             if (count == 1) {
